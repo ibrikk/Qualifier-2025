@@ -100,26 +100,29 @@ To bridge this gap, this study introduces an Empathy-Based Privacy Sandbox, enab
 
 \begin{table*}[ht]
 \centering
-\begin{tabular}{|p{2cm}|p{3cm}|p{10cm}|}
+\begin{tabular}{|p{3cm}|p{2cm}|p{5cm}|p{4cm}|}
 \hline
-\textbf{Category} & \textbf{References} & \textbf{Limitations} \\
+\textbf{Category} & \textbf{Studies} & \textbf{Study Focus and Findings} & \textbf{Limitations} \\ 
 \hline
-\textbf{Privacy Policies} & Döbelt \& Halama (2023); Panadés \& Yuguero (2025); Obar \& Oeldorf-Hirsch (2020) & Legally mandated disclosures that outline how user data is collected and processed. Often ignored due to length and complexity; users rarely read them, leading to uninformed consent. \\
+\textbf{Privacy Policies} & \citet{Obar2018The}; \citet{Korunovska2020TheCA}; \citet{stellmacher2022escaping} & Analyzed user engagement with privacy policies, finding that most users ignore them due to complexity. & Does not provide a practical solution to improve privacy comprehension. \\
 \hline
-\textbf{Just-in-Time Permission Prompts} & Acquisti et al. (2023); Femmam (2024); Wash (2010) & Appear at the moment of decision, asking users to grant or deny access to data. Users frequently dismiss them without reading; decision fatigue leads to automatic acceptance. \\
+\textbf{Just-in-Time Permission Prompts} & \citet{Park2023Understanding}; \citet{Gruber2022Towards} & Explored JIT prompts' role in improving privacy awareness but found user fatigue leads to dismissals. & Users ignore frequent prompts, leading to desensitization. \\
 \hline
-\textbf{Privacy Dashboards} & Wilson et al. (2024); Parti et al. (2024); Panadés \& Yuguero (2025) & Aggregate data access history and provide users with control options. Lack real-time feedback and proactive alerts; overly technical for non-expert users, limiting effectiveness. \\
+\textbf{Gamified Privacy Education} & \citet{Pahlavanpour2024gamified}; \cite{QUAYYUM2025100826}; \citet{dincelli2020choose}; \citet{stellmacher2022escaping} & Investigated game-based learning for privacy awareness, showing increased engagement in controlled studies. & Effectiveness in real-world decision-making remains unclear. \\
 \hline
-\textbf{Ad Blockers \& Tracker Prevention} & Sikder et al. (2017); Guo et al. (2021); Rangasamy et al. (2024) & Designed to block online trackers and ad-based profiling. Effective for web tracking but fail to prevent mobile sensor-based tracking, which occurs through system-level interactions. \\
+\textbf{Web-Based Privacy Awareness Tools} & \citet{Hasrama2024Exploring}; \citet{bian2021supply} & Developed interactive online tools for privacy education but did not account for mobile-specific tracking. & Lacks applicability to sensor-driven privacy risks. \\
 \hline
-\textbf{Gamified Privacy Education} & Bahrini et al. (2024); Shah \& Agarwal (2023); Giannakas et al. (2023) & Engaging and interactive learning methods that use games or challenges to educate users on privacy risks. Lack real-world applicability; effectiveness varies based on user engagement and prior knowledge. \\
+\textbf{Empathy-Based Sandbox Approaches} & \citet{Chaoran2023EmpathySandbox} & Explored sandbox environments for privacy learning, emphasizing interactive experimentation. & Prior studies focus on metadata manipulation, not real-time sensor tracking. \\
 \hline
-\textbf{Empathy-Based Sandbox for Privacy Learning} & Chen et al. (2024); Menard \& Bott (2025); Guo et al. (2021) & Allows users to manipulate digital personas to explore privacy risks in a controlled environment. Limited to web-based environments; not yet adapted for mobile tracking mechanisms where real-time data flows persist. \\
+\textbf{Privacy Management Tools} & \citet{al-muhander2023}; \citet{Stephanidis04022025} & Proposed interactive privacy dashboards and mobile tools for real-time privacy control. & Tools require significant user engagement, which may not be realistic in daily use. \\
+\hline
+\textbf{Experimental Privacy Education Approaches} & \citet{Fleischhauer2022Paradox}; \citet{aly2024tailoring}; \citet{botturi2023school} & Tested privacy education interventions through controlled lab experiments with mobile users. & Lacks longitudinal studies to measure long-term behavioral impact. \\
 \hline
 \end{tabular}
-\caption{Grouped Literature Review on Privacy Awareness Tools and Their Limitations in Mobile Environments}
-\label{tab:privacy_awareness_lit_review}
+\caption{Summary of Prior Research on Privacy Awareness Tools and their limitations in Mobile Ecosystems}
+\label{tab:privacy_awareness}
 \end{table*}
+
 
 Several methods have been developed to improve privacy awareness, yet most do not drive significant behavioral change (Table \ref{tab:privacy_awareness_lit_review}). Privacy policies, despite being legally mandated, are often too lengthy and complex for users to engage with meaningfully, leading to uninformed consent \cite{burkhardt2023privacy}. Just-in-time permission prompts, while intended to enhance user control, frequently result in decision fatigue, causing users to accept permissions without considering the consequences \cite{bilogrevic2021shhh}. Similarly, privacy dashboards, which aggregate data access history, lack real-time tracking insights, limiting their usefulness in preventing unwanted data collection \cite{narayanan2024real}.
 
