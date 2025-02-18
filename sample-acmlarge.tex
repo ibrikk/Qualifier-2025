@@ -135,18 +135,25 @@ As discussed in Section 2.3, existing privacy awareness tools struggle to provid
  ---> WE WILL SEE IF WE HAVE SPACE SPECIFICALLY FOR THIS
 
 \section{Proposed Research Design and Methodology}
-This study employs a lab-based experimental methodology to investigate how interactive, hands-on privacy experimentation in mobile environments influences user understanding of personal data exposure. Building on the empathy-based privacy sandbox framework, this research expands on the methodology previously applied in web environments \cite{Chaoran2023EmpathySandbox} to mobile applications, incorporating real-time data manipulations that are uniquely tied to mobile ecosystems. The study design consists of a controlled experimental setup where participants will engage with the \textit{Empathy-Based Privacy Sandbox for Mobile}, allowing them to explore the consequences of privacy decisions in a risk-free setting. The methodological framework is structured around a three-phase approach: (1) an introduction and familiarization phase, (2) an interactive experimental phase, and (3) a post-experiment reflection phase.
+This study employs a lab-based experimental methodology to investigate how interactive, hands-on privacy experimentation in mobile environments influences user understanding of personal data exposure. Building on the empathy-based privacy sandbox framework, this research expands on the methodology previously applied in web environments \cite{Chaoran2023EmpathySandbox} to mobile applications, incorporating real-time data manipulations that are uniquely tied to mobile ecosystems, as illustrated in Figure \ref{fig:methodology}. The study design consists of a controlled experimental setup where participants will engage with the \textit{Empathy-Based Privacy Sandbox for Mobile}, allowing them to explore the consequences of privacy decisions in a risk-free setting. The methodological framework is structured around a three-phase approach: (1) an introduction and familiarization phase, (2) an interactive experimental phase, and (3) a post-experiment reflection phase.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figure-2-methodology.png} 
+    \caption{Pipeline for Persona Generation and Real-Time Data Spoofing}
+    \label{fig:methodology}
+\end{figure}
 
 \subsection{Empathy-Based Privacy Sandbox for Mobile}
 
-The \textit{Empathy-Based Privacy Sandbox for Mobile} serves as the experimental testbed for this study, providing participants with an interactive platform where they can actively modify privacy settings, alter real-time data streams, and observe system responses. Unlike traditional privacy education tools that rely on passive explanations or abstract warnings, this sandbox enables users to directly manipulate data attributes such as mobile permissions, sensor readings, advertising identifiers, and behavioral activity patterns. By engaging with the sandbox, participants can witness in real time how mobile applications react to different privacy configurations, fostering a deeper, experiential understanding of how their data is collected, shared, and utilized.
+The \textit{Empathy-Based Privacy Sandbox for Mobile} serves as the experimental testbed for this study, providing participants with an interactive platform where they can actively modify privacy settings, alter real-time data streams, and observe system responses (Figure \ref{fig:methodology}). Unlike traditional privacy education tools that rely on passive explanations or abstract warnings, this sandbox enables users to directly manipulate data attributes such as mobile permissions, sensor readings, advertising identifiers, and behavioral activity patterns. By engaging with the sandbox, participants can witness in real time how mobile applications react to different privacy configurations, fostering a deeper, experiential understanding of how their data is collected, shared, and utilized.
 
 The sandbox environment supports both guided and self-directed privacy exploration. Participants will initially follow structured privacy manipulation tasks designed to highlight key areas of mobile data tracking, such as location tracking, motion-based personalization, and advertising personalization. Following this, they will transition to an open-ended phase where they can explore data modifications independently. A real-time feedback system within the sandbox provides users with immediate insights into how their changes impact app behavior, allowing them to make connections between privacy settings and personalization mechanisms.
 \subsection{Persona Generation and Spoofing}
 
 A persona is a constructed identity that represents a typical user, complete with demographic details, behavioral patterns, and digital interactions. In privacy research, personas serve as a controlled way to explore data collection and system responses without exposing real user information \cite{persona}, \cite{Chaoran2023EmpathySandbox}. By simulating real-world behaviors—such as browsing habits, app usage, and sensor interactions—personas allow participants to experience privacy risks firsthand. This immersive approach not only enhances understanding but also fosters empathy, as users see how different privacy choices shape their digital experiences.
 
-The process of persona generation and data spoofing in this study follows a structured pipeline that integrates \textit{few-shot learning}, \textit{chain-of-thought reasoning}, and \textit{real-time system spoofing} to create synthetic mobile personas. These personas mimic real user behaviors, allowing participants to explore privacy risks in a controlled, interactive environment without exposing their actual data.
+The process of persona generation and data spoofing in this study follows a structured pipeline that integrates \textit{few-shot learning}, \textit{chain-of-thought reasoning}, and \textit{real-time system spoofing} to create synthetic mobile personas (Figure \ref{fig:methodology}). These personas mimic real user behaviors, allowing participants to explore privacy risks in a controlled, interactive environment without exposing their actual data.
 
 The process begins with persona initialization, where users provide a brief textual description to guide the creation of a synthetic identity. This input may include factors such as occupation, lifestyle, and typical mobile habits. To generate a coherent and contextually relevant persona, we apply few-shot learning, feeding a pre-trained language model with structured examples of realistic mobile users. This helps the model infer missing details such as socioeconomic background, device preferences, and common app usage patterns.
 
@@ -226,7 +233,9 @@ For policymakers and regulatory bodies, this research supports the argument for 
 
 Despite its contributions, this study faces several challenges and limitations. One key challenge is the complexity of real-time data manipulation on mobile devices. Unlike web-based privacy interventions, mobile applications operate within sandboxed environments, limiting cross-app interactions and restricting certain data manipulations. While our study circumvents some of these limitations by focusing on app-specific behaviors, future work may need to explore broader system-level interventions.
 
-Another limitation is the controlled nature of the study. Because this research is conducted in a lab environment, user behaviors may not fully reflect real-world interactions with privacy settings. While our study provides valuable insights into privacy awareness, additional longitudinal studies will be necessary to assess the long-term impact of sandbox-based privacy education on user decision-making.
+Another limitation is the controlled nature of the study. Because this research is conducted in a lab environment, user behaviors may not fully reflect real-world interactions with privacy settings. While our study provides valuable insights into privacy awareness, additional longitudinal studies will be necessary to assess the long-term impact of sandbox-based privacy education on user decision-making. 
+
+Moreover, this study was conducted exclusively on Android devices, leveraging system-level API hooking to manipulate sensor data and user identifiers. While Android provides greater flexibility for modifying system behaviors, the same level of intervention may not be feasible on iOS, where Apple enforces stricter security and privacy controls. As a result, the findings may not fully generalize to iOS ecosystems.
 
 Furthermore, the effectiveness of this approach may vary across different user demographics. Prior research suggests that privacy literacy, technical expertise, and cultural differences all influence privacy-related behaviors. Future research should explore how different user groups respond to sandbox-based privacy interventions and whether customization or adaptive guidance could enhance usability across diverse populations.
 
@@ -237,6 +246,8 @@ Furthermore, the effectiveness of this approach may vary across different user d
 This study lays the groundwork for several future research directions in HCI and privacy research. One avenue is the integration of adaptive learning models into privacy sandboxes. By leveraging personalized feedback mechanisms, future versions of the sandbox could dynamically adjust privacy simulations based on user expertise and privacy concerns.
 
 Additionally, expanding the scope of the study to real-world deployment scenarios could provide valuable insights into long-term behavioral changes. While this research focuses on immediate user reactions, future work should examine whether hands-on privacy experimentation leads to sustained improvements in privacy literacy and decision-making confidence over time.
+
+Furthermore, future research should explore how similar privacy-enhancing techniques could be adapted for iOS, particularly in light of Apple's App Tracking Transparency (ATT) framework \cite{apple_att} and its restrictions on background data access. Investigating how cross-platform tracking mechanisms operate between Android and iOS users could provide deeper insights into privacy risks in mixed-device environments.
 
 Lastly, future research could explore collaborations with industry stakeholders, including app developers, privacy advocates, and regulatory bodies, to integrate sandbox-based privacy interventions into commercial applications. By partnering with technology companies, future studies could assess how such interventions impact user trust, engagement, and compliance with evolving privacy regulations.
 
@@ -253,102 +264,6 @@ Furthermore, our study contributes to HCI and privacy research by validating the
 Despite its contributions, this research is not without limitations. The controlled lab environment of our study, while valuable for evaluating initial user reactions, may not fully reflect long-term privacy behaviors in real-world settings. Future work should explore longitudinal studies to assess how sustained engagement with privacy sandboxes influences user decision-making over time. Additionally, further refinement of interactive privacy tools—potentially incorporating adaptive learning models—could enhance personalization and usability across diverse user groups.
 
 As mobile privacy concerns continue to grow, empowering users with experiential learning tools becomes increasingly critical. This study lays the groundwork for future advancements in privacy education, reinforcing the idea that hands-on engagement with privacy settings is essential for fostering meaningful behavioral change. By expanding the scope of privacy-enhancing technologies, this research contributes to the broader discourse on usable privacy design and provides actionable insights for building more transparent, user-centric mobile applications.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% \section{OLD Version:  Just for reference}
-
-% Mobile ecosystems introduce new dimensions of privacy concerns due to the \textit{always-on nature} of sensor data tracking. Applications increasingly use sensor-based inferences for health monitoring, location tracking, motion-based authentication, and behavioral profiling. Unlike traditional web tracking, mobile data collection is often \textit{passive, continuous, and harder to opt out of}. There is limited work on \textit{how users perceive and understand mobile sensor tracking}, making this an essential area of study.
-
-% While previous studies have framed the privacy paradox primarily in the context of web browsing, metadata, and social media, mobile systems introduce an additional layer of complexity. Unlike traditional platforms where privacy is largely managed through account settings and permission toggles, mobile applications continuously collect sensor-driven data such as location, motion patterns, ambient conditions, and biometric inputs. These sensor readings provide granular, real-time behavioral insights, making it even more difficult for users to understand how their data is being used.
-
-% The continuous and passive nature of sensor data collection amplifies the privacy attitudes-behavior gap. Research in contextual integrity (Nissenbaum, 2019) highlights that users’ privacy expectations are often misaligned with actual data practices—they may accept GPS tracking for navigation but fail to realize that the same location data is being used for targeted advertising, behavioral profiling, and third-party sharing. Unlike web-based tracking, where cookies can be deleted or blocked, sensor data collection operates at the system level, often without clear opt-out mechanisms.
-
-% Moreover, research has shown that mobile users make privacy decisions reactively rather than proactively. Unlike traditional web privacy settings, where users configure preferences in advance, mobile data-sharing decisions occur in-the-moment, often as one-time permission prompts (Vitale et al., 2018). This further contributes to inconsistent privacy behaviors, as decisions are made without a full understanding of long-term implications.
-
-% \subsection{Bridging the Privacy Awareness Gap Through Experimentation}
-% One proposed method to address this gap is to provide risk-free environments where users can explore and experience privacy consequences firsthand. Traditional privacy education relies on informational approaches, such as warning labels and tutorials, which have been shown to be only moderately effective in changing behavior (Wang et al., 2021). However, experiential learning theories suggest that users are more likely to internalize privacy concepts when they engage directly with system outcomes.
-
-% Previous research, such as the work of Chaoran et. al. \cite{Chaoran2023EmpathySandbox}, has demonstrated that sandboxed environments—where users can test different privacy settings and observe system responses—lead to greater privacy literacy and more consistent decision-making. However, these studies have primarily focused on web-based environments, where users manipulated browser metadata, search history, and cookie tracking. Our research extends this concept into mobile sensor ecosystems, which requires additional layers of sensor spoofing, real-time data manipulation, and controlled experimental conditions.
-
-% This transition from web-based privacy experiments to sensor-driven mobile environments necessitates new methodologies that account for:
-
-% The continuous and real-time nature of sensor data collection, which differs from static privacy settings in browsers.
-% The integration of multiple sensors (GPS, motion, battery, environmental factors) into system decision-making, making privacy consequences harder to trace.
-% The complexity of app ecosystems, where system-wide data flows (e.g., fused location tracking, background permissions) operate beyond a single app’s interface.
-% This study builds upon sandbox-based privacy frameworks but introduces sensor spoofing as an additional experimental mechanism, allowing users to see, manipulate, and reflect on the ways mobile applications interpret their data. The following section details the theoretical foundations of empathy-based sandboxes and their role in privacy research.
-
-
-
-% \section{Proposed Framework}
-
-% \subsection{Design Objectives}
-% The proposed system will:
-% \begin{enumerate}
-%     \item Provide a risk-free environment where users can explore privacy settings and experiment with sensor data manipulation.
-%     \item Enable users to \textit{observe the relationship between their data and system outcomes} through controlled experimentation.
-%     \item Expand the \textit{empathy-based privacy sandbox model} to integrate real-time \textit{sensor spoofing} (e.g., GPS, accelerometer, gyroscope, light sensor, battery data) in addition to traditional metadata manipulation.
-%     \item Investigate the impact of manipulated sensor data on user privacy decisions, user perceptions of risk, and behavioral changes regarding data-sharing practices.
-% \end{enumerate}
-
-% \subsection{Components of the Sandbox}
-% \begin{itemize}
-%     \item \textbf{Synthetic Persona Generation}: Users define synthetic personas with demographic and behavioral patterns. These personas interact with applications under \textit{artificially generated} data configurations.
-%     \item \textbf{Sensor and Data Spoofing Module}: Includes \textit{spoofing capabilities} for GPS, accelerometer, gyroscope, and additional mobile sensors. Users can manipulate sensor input data to observe changes in app behavior (e.g., a \textit{spoofed low battery level} might trigger app optimizations or recommendations).
-%     \item \textbf{Interactive Feedback Mechanism}: Users interact with real apps and \textit{observe system responses} to their synthetic sensor data. A visualization tool highlights \textit{how manipulated data alters personalization, recommendations, and app functionalities}.
-%     \item \textbf{Privacy Awareness and Literacy Tools}: Users receive \textit{real-time explanations} of how their sensor data is being used. Post-experiment reflections help users connect \textit{privacy decisions} to actual system outcomes.
-% \end{itemize}
-
-% \section{Study Design}
-
-% \subsection{Research Questions}
-% \begin{itemize}
-%     \item How do users perceive privacy risks associated with real-time sensor tracking in mobile apps?
-%     \item How can an empathy-based sandbox improve users’ understanding of how their data footprint influences system behavior?
-%     \item How does hands-on experimentation with sensor data lead to increased \textit{privacy awareness and decision-making confidence}?
-% \end{itemize}
-
-% \subsection{Experimental Setup}
-% \begin{itemize}
-%     \item \textbf{Participants}: 30--50 participants from diverse demographic backgrounds.
-%     \item \textbf{Tasks}: Participants interact with mobile apps using \textit{synthetic sensor inputs}, logging observations and reflections.
-%     \item \textbf{Scenarios}:
-%         \begin{itemize}
-%             \item \textbf{GPS Spoofing}: Testing how location-based recommendations shift when locations are modified.
-%             \item \textbf{Motion Data Alteration}: Observing changes in health app recommendations when motion patterns are adjusted.
-%             \item \textbf{Battery Spoofing}: Testing app optimizations when battery levels are artificially set to low or high.
-%         \end{itemize}
-% \end{itemize}
-
-% \section{Anticipated Results and Contributions}
-
-% \subsection{Expected Outcomes}
-% \begin{itemize}
-%     \item Users will gain \textit{firsthand experience} in privacy decision-making, improving awareness and literacy.
-%     \item App behavior will demonstrate \textit{measurable shifts} based on manipulated sensor inputs.
-%     \item The study will inform \textit{policy recommendations} for designing \textit{more transparent privacy settings} in mobile apps.
-% \end{itemize}
-
-% \subsection{Broader Impacts}
-% \begin{itemize}
-%     \item Findings can \textit{guide regulators} in framing user-friendly privacy policies.
-%     \item Insights will help \textit{developers design more transparent and user-controllable privacy settings}.
-% \end{itemize}
 
 
 \bibliographystyle{ACM-Reference-Format}
